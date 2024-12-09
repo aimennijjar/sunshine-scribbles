@@ -1,0 +1,61 @@
+<!-- views/search_results.hbs -->
+<!-- views/search_results.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">Sunshine Scribbles ☀️</div>
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/prompts">Prompts</a></li>
+
+                {{#if currentUser}}
+                <li><a href="/user/{{currentUser.username}}">My Posts</a></li>
+                {{/if}}
+                {{#unless currentUser}}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                {{else}}
+                <li><a href="/user/{{currentUser.username}}">Signed In as {{currentUser.username}}</a></li>
+                <li><a href="/logout">LogOut</a></li>
+                {{/unless}}
+            </ul>
+        </nav>
+    </header>
+
+    <section class="masthead" id="masthead1">
+        <section class="masthead">
+            <div class="container">
+                <h2 class="masthead-subheading" id="srchhead">Search Results</h2>
+                {{#if message}}
+                <p id="search-message">{{message}}</p>
+                {{else}}
+                <h3>Posts by {{user.username}}</h3>
+                <div class="row text-center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;">
+                    {{#each posts}}
+                    <div class="thumbnail" style="max-width:200px;">
+                        <img src="{{this.image}}" alt="{{this.name}}" style="max-width:100%;">
+                        <h4>{{this.name}}</h4>
+                        <p><a class="btn" href="/posts/{{this._id}}">More Info</a></p>
+
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+        </section>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!--views/posts/edit.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{post.name}}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">Sunshine Scribbles ☀️</div>
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/posts">Posts</a></li>
+                {{#if currentUser}}
+                <li><a href="/user/{{currentUser.username}}">My Posts</a></li>
+                {{/if}}
+                {{#unless currentUser}}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                {{else}}
+                <li><a href="/user/{{currentUser.username}}">Signed In as {{currentUser.username}}</a></li>
+                <li><a href="/logout">LogOut</a></li>
+                {{/unless}}
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center;">Edit {{post.name}}</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/posts/{{post._id}}/?_method=PUT" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="post[name]" value="{{post.name}}"
+                        placeholder="Post Name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="url" name="post[image]" value="{{post.image}}"
+                        placeholder="Image URL">
+                </div>
+                <div class="form-group">
+                    <!-- Changed this input to a textarea for larger message input -->
+                    <textarea class="form-control" name="post[description]" placeholder="Description"
+                        rows="5">{{post.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </form>
+            <a href="/posts">Go back</a>
+        </div>
+    </div>
+</body>
+
+</html>
