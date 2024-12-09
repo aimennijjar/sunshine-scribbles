@@ -1,0 +1,220 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffe6f2;
+  /* Light pink */
+  color: #ff6f91;
+  /* Soft pink */
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Pacifico', cursive;
+  color: #ff6f91;
+}
+
+/* Simple Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcce0;
+  /* Soft pink navbar */
+  border-bottom: 2px solid #ffb6c1;
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #ff4081;
+  font-family: 'Pacifico', cursive;
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #ff4081;
+  font-weight: 600;
+}
+
+.navbar-links ul li a:hover {
+  color: #ff6f91;
+}
+
+/* Masthead / Header Section */
+.masthead {
+  text-align: center;
+  padding: 2rem 2rem 2rem 2rem;
+  background: linear-gradient(to bottom right, #ffe6f2, #fff4f8);
+}
+
+.container {
+  height: 80vh;
+}
+
+.masthead-subheading {
+
+  font-family: 'Pacifico', cursive;
+  font-size: 5rem;
+  color: #ff4081;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #ffcccb;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  color: #ff4081;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn {
+  background: #fed136;
+  /* Sunny yellow */
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #ff6f91;
+  color: #fff;
+}
+
+/* Forms & Inputs */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="email"],
+textarea {
+  border: 1px solid #ffcccb;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff6f91;
+}
+
+/* Containers and Layout */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Thumbnails / Cards */
+.thumbnail img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Utility Classes */
+.text-right {
+  text-align: right;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.float-right {
+  float: right;
+}
+
+/* Lists without hearts if you want:
+ul {
+  list-style: none;
+  padding: 0;
+}
+*/
+
+/*For posts page*/
+#pwelcome {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff4081;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #ffcccb;
+}
+
+#pmsg {
+  font-size: 1.2rem;
+  color: #ff4081;
+  margin-bottom: 40px;
+}
+
+/* Style the button for liked state */
+button.heart-btn.liked {
+  background-color: #ff4081;
+  /* Pink background when liked */
+}
+
+/* Heart icon styles */
+button.heart-btn i.fas.fa-heart {
+  color: pink !important;
+  /* Ensure pink color when liked */
+}
+
+button.heart-btn i.far.fa-heart {
+  color: #ccc !important;
+  /* Light gray color when not liked */
+}
+
+button.heart-btn:hover i {
+  color: #ff6f91;
+  /* Darker pink on hover */
+}
+
+/* search*/
+#masthead1 {
+  height: 100vh;
+}
+
+#srchhead {
+  margin-top: 0px;
+}
+
+#titleprompt {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #ff4081;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #ffcccb;
+}
+
+#promptp {
+  font-size: 1.2rem;
+  color: #ff4081;
+  margin-bottom: 40px;
+}
